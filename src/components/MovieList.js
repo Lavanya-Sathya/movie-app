@@ -9,13 +9,15 @@ const MovieList = () => {
   const [filteredMovieData, setFilteredMovieData] = useState([]);
   const [isSearch, setIsSearch] = useState("");
   const dispatch = useDispatch();
+  // fetch movie List from redux
   useEffect(() => {
     dispatch(fetchMovie());
   }, []);
   const data = useSelector((store) => store.movie);
 
   useEffect(() => {
-    if (data.data) {
+    // sort movieList based on rating
+    if (data?.data) {
       const sortedData = [...data.data].sort((a, b) => b.rating - a.rating);
       setmovieData(sortedData);
       setFilteredMovieData(sortedData);
@@ -25,6 +27,7 @@ const MovieList = () => {
     <div className="w-9/12 md:w-10/12 mx-auto mb-10 pt-32">
       <div className=" text-center mb-4">
         <h1 className="font-bold my-4 text-2xl text-[#ffb703]">Movie List</h1>
+        {/* search and reset */}
         <div className="flex flex-cols sm:flex-row justify-center items-center gap-4">
           <input
             type="text"
@@ -58,6 +61,7 @@ const MovieList = () => {
           </button>
         </div>
       </div>
+      {/* Movie cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
         {filteredMovieData?.length === 0 ? (
           <ShimmerCard />

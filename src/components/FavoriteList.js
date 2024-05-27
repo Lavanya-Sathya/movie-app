@@ -6,9 +6,11 @@ import { clearItems } from "../redux/favoriteSlice";
 
 const FavoriteList = () => {
   const dispatch = useDispatch();
+  //   Clear all items from favorite list
   const clearFavList = () => {
     dispatch(clearItems());
   };
+  //   load favorite items from redux
   const fav = useSelector((store) => store.favorite.items);
   return fav?.length === 0 ? (
     <div className=" pt-32 flex flex-col justify-center items-center ">

@@ -6,13 +6,18 @@ const MovieCard = (props) => {
   const item = props?.data;
   const { id, image, movie, rating } = item;
 
+  // isFav is used to differentiate between favorite and unfavorite
   const [isFav, setIsFav] = useState(false);
   const favList = useSelector((store) => store.favorite.items);
   const dispatch = useDispatch();
-  const handleAddFav = (item) => {
+
+  // add or remove the items from favorite list
+  const handleFav = (item) => {
     dispatch(addItem(item));
     setIsFav(!isFav);
   };
+
+  // if id is not present in the favorite movie list then isFav is set to false
   useEffect(() => {
     const fav = favList?.findIndex((item) => item?.id === id);
     if (fav === -1) {
@@ -44,7 +49,7 @@ const MovieCard = (props) => {
             }`}
             onClick={(e) => {
               e.preventDefault();
-              handleAddFav(item);
+              handleFav(item);
             }}
           >
             Fav
