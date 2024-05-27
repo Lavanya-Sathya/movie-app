@@ -8,9 +8,9 @@
 
 ## ScreenShot
 
-![screenshot1]
+![screenshot1](src/assets/home.PNG)
 
-![screenshot2]
+![screenshot2](src/assets/favorite.PNG)
 
 ## Components
 
