@@ -28,7 +28,7 @@ const MovieList = () => {
       <div className=" text-center mb-4">
         <h1 className="font-bold my-4 text-2xl text-[#ffb703]">Movie List</h1>
         {/* search and reset */}
-        <div className="flex flex-cols sm:flex-row justify-center items-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <input
             type="text"
             className="p-2 border-[1px] rounded-lg focus:outline-none"
@@ -36,7 +36,7 @@ const MovieList = () => {
             onChange={(e) => setIsSearch(e.target.value)}
           />
           <button
-            className="px-2 py-1 bg-[#023047] hover:bg-blue-900 text-white rounded-lg"
+            className="px-4 py-2 bg-[#023047] hover:bg-blue-900 text-white rounded-lg"
             onClick={() => {
               const filterSearch = movieData.filter((item) =>
                 item?.movie?.toLowerCase()?.includes(isSearch?.toLowerCase())
@@ -51,7 +51,7 @@ const MovieList = () => {
             Search
           </button>
           <button
-            className="px-2 py-1 bg-[#023047] hover:bg-blue-900 text-white rounded-lg"
+            className="px-4 py-2 bg-[#023047] hover:bg-blue-900 text-white rounded-lg"
             onClick={() => {
               setIsSearch("");
               setFilteredMovieData(movieData);
