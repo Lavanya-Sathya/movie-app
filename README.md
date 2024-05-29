@@ -2,6 +2,9 @@
 
 ## Live link :
 - https://movie-app-lavanya.netlify.app/
+
+## Demo link :
+- https://drive.google.com/file/d/1UjLdkEsv06smJiorAbxL_4yHsky9ZGwH/view?usp=drive_link
 ## Overview
 
 - A movie app that allows users to browse through a collection of movies, mark their favorites, and view them later.
